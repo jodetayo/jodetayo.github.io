@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Odetayo - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Starfield -->
+    <div class="stars"></div>
+
+    <!-- Shooting stars -->
+    <div class="shooting-star" style="top: 20%; animation-delay: 0s;"></div>
+    <div class="shooting-star" style="top: 60%; animation-delay: 2s;"></div>
+    <div class="shooting-star" style="top: 40%; animation-delay: 4s;"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Joseph Odetayo</div>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#" class="nav-link" data-section="projects">Projects</a></li>
+                    <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+                </ul>
+            </nav></div>
+            </header>
+            
+            <a href="#" class="back-btn" id="backBtn">← Back to Home</a>
+            
+            <main>
+                <!-- Floating orbs -->
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            
+                <!-- Home Section -->
+                <section class="section active" id="home">
+                    <div class="container">
+                        <div class="hero">
+                            <div class="hero-content fade-in">
+                                <div class="subtitle"> Computer Science & Design | Northeastern University </div>
+                                <h1>Joseph Odetayo</h1>
+                                <p class="description">
+                                    Hey! my name is Joseph and I'm an aspiring UX designer at Northeastern University! 😁
+                                </p>
+                                <div class="cta-buttons">
+                                    <a href="#" class="btn btn-primary nav-link" data-section="projects"> My Projects</a>
+                                    <a href="#" class="btn btn-secondary nav-link" data-section="about"> More things about me</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- About Section -->
+                <section class="section" id="about">
+                    <div class="container">
+                        <h2 class="section-title fade-in">About Me</h2>
+                        <div class="about-grid">
+                            <div class="about-text slide-in-left">
+                                <p>
+                                    I'm a 2nd year at Northeastern studying Computer Science and Design. I got into this field
+                                    because
+                                    I like both the technical problem-solving aspect of programming and the creative side of making
+                                    things look good and work well.
+                                </p>
+                                <p>
+                                    I've worked on projects like Band4Band (include soundry later) where I handled logo design and
+                                    frontend development.
+                                    I also do brand management for my university's a cappella group, which involves creating
+                                    graphics,
+                                    managing social media content, and coordinating with external vendors.
+                                </p>
+                                <p>
+                                    I'm looking for opportunities where I can contribute to real projects while learning
+                                    from experienced developers and designers. I work well on teams and can adapt to different tasks
+                                    as needed.
+                                </p>
+                            </div>
+                            <div class="skills-container slide-in-right">
+                                <h3>Skills & Tools</h3>
+            
+                                <div class="skill-category">
+                                    <h4>Programming</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Java</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">SQL</span>
+                                        <span class="skill-tag">HTML/CSS</span>
+                                    </div>
+                                </div>
+            
+                                <div class="skill-category">
+                                    <h4>Design Software</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Adobe Photoshop</span>
+                                        <span class="skill-tag">After Effects</span>
+                                        <span class="skill-tag">Illustrator</span>
+                                        <span class="skill-tag">Figma</span>
+                                        <span class="skill-tag">Procreate</span>
+                                        <span class="skill-tag">Canva</span>
+
+                                    </div>
+                                </div>
+            
+                                <div class="skill-category">
+                                    <h4>Development Tools</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">IntelliJ</span>
+                                        <span class="skill-tag">VS Code</span>
+                                        <span class="skill-tag">Eclipse</span>
+                                        <span class="skill-tag">Git</span>
+                                        <span class="skill-tag">Supabase</span>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <div class="container">
+                <h2 class="section-title fade-in">My Work</h2>
+                
+                <div class="project-filters fade-in">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="motion">Adobe</button>
+                    <button class="filter-btn" data-filter="code">Code</button>
+                </div>
+
+                <div class="project-card fade-in" data-category="code" data-project="band4band">
+                    <div class="project-preview">🎵</div>
+                    <div class="project-info">
+                        <div class="project-category">Full-Stack Development • Team Project</div>
+                        <h3 class="project-title">Band4Band</h3>
+                        <p class="project-description">
+                            Social media platform connecting artists and live music lovers. Features event posting,
+                            artist following, master calendar with genre filtering, and role-based access control.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Frontend</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Team Project</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link click-project" data-project="band4band">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title fade-in">Let's Connect</h2>
+                    </p>
+                    
+                    <div class="contact-info fade-in">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <span>jodetayo2024@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>LinkedIn:</strong>
+                            <span>www.linkedin.com/in/joseph-odetayo
+                            
+                            </span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Location:</strong>
+                                <span>Boston</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <strong>Astral Sign:</strong>
+                                <span>Leo ♌︎</span>
+                            </div>
+                            </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Pages - Templates -->
+        
+        <!-- Project 1 Detail Page -->
+        <section class="section" id="project-band4band">
+    <div class="container">
+        <div class="project-detail fade-in">
+            <div class="project-header">
+                <div class="category">Full-Stack Development • Team Project</div>
+                <h1>Band4Band</h1>
+                <p class="description">
+                    A platform connecting artists and music lovers, built through Oasis at Northeastern. 
+                    Includes comprehensive event management, artist profiles, social following, and a 
+                    master calendar with genre filtering.
+                </p>
+            </div>
+
+            <div class="project-showcase">
+                <div class="placeholder">🎵</div>
+                <p class="note"> add screenshots boiii</p>
+            </div>
+
+            <div class="project-details-grid">
+                <div class="project-content">
+                    <h3>Project Overview & Role</h3>
+                    <p>
+                        Band4Band addresses the need for better connections 
+                        between local artists and music enthusiasts.
+                    </p>
+                    <p> My contributions included designing the Band4Band logo, improving
+                    visuals throughout the interface, and assisting with other frontend development
+                    tasks. This collaborative approach helped me to support the team across different areas
+                    while also gaining exposure to full-stack development.
+                    </p>
+
+                    <h3>Key Features Implemented</h3>
+                    <p>
+                        Built a comprehensive event posting system for artists, social following functionality, 
+                        and a  calendar interface with filtering capabilities. The platform supports 
+                        different user types (artists vs listeners) with role-based access control.
+                    </p>
+                    
+                    <h3>Technical Learning & Teamwork</h3>
+                    <p>
+                        Gained exposure to Supabase and full-stack development workflows while working with a 6-person team.
+                        Learned to adapt between design and development tasks as needed, practicing version control and
+                        agile collaboration methods.
+                        
+                        This project taught me how visual design decisions impact technical implementation and reinforced
+                        the importance of clear communication in team environments.
+                    </p>
+                </div>
+
+                <div class="project-sidebar">
+                    <h4>Project Details</h4>
+                    
+                    <div class="info-item">
+                        <div class="label">Duration</div>
+                        <div class="value">8 Weeks</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="label">Technologies</div>
+                        <div class="value">HTML, CSS, JavaScript, Supabase</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="label">Team Size</div>
+                        <div class="value">6 developers</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="label">Organization</div>
+                        <div class="value">Oasis at Northeastern</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="label">My Role</div>
+                        <div class="value">Visual Designer & Frontend Contributor</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="label">Key Skills</div>
+                        <div class="value">Team Collaboration, Full-Stack Development</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="label">Team</div>
+                        <div class="value"> Colin Quigley, Jack Senders, Shelby Snyder, Hector Batista, Sophia Bovino</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-actions">
+                <a href=https://lnkd.in/ggBJVNfZ class="action-btn primary">Demo Video</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Project 2 Detail Page -->
+        <section class="section" id="project-project-2">
+            <div class="container">
+                <div class="project-detail fade-in">
+                    <div class="project-header">
+                        <div class="category">[Tool/Technology] • [Project Type]</div>
+                        <h1>[Project Title]</h1>
+                        <p class="description">
+                            [Detailed description of your project - what it is, what problem it solves, 
+                            your approach to building/designing it, and what makes it unique or interesting.]
+                        </p>
+                    </div>
+
+                    <div class="project-showcase">
+                        <div class="placeholder">[Icon/Emoji]</div>
+                        <p class="note">Your project visuals would be displayed here</p>
+                    </div>
+
+                    <div class="project-details-grid">
+                        <div class="project-content">
+                            <h3>[Process Section]</h3>
+                            <p>[Description of your approach and methodology]</p>
+
+                            <h3>[Features/Components Section]</h3>
+                            <p>[Key features or deliverables]</p>
+                            
+                            <h3>[Learning/Results Section]</h3>
+                            <p>[What you accomplished and learned]</p>
+                        </div>
+
+                        <div class="project-sidebar">
+                            <h4>Project Details</h4>
+                            
+                            <div class="info-item">
+                                <div class="label">Duration</div>
+                                <div class="value">[Timeline]</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="label">Technologies</div>
+                                <div class="value">[Your tech stack]</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="label">Context</div>
+                                <div class="value">[Class project, personal, etc.]</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="label">Key Skills</div>
+                                <div class="value">[Skills demonstrated]</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#" class="action-btn primary">[Main Link]</a>
+                        <a href="#" class="action-btn">[Secondary Link]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects 3-6: Similar template structure -->
+        <section class="section" id="project-project-3">
+            <div class="container">
+                <div class="project-detail fade-in">
+                    <div class="project-header">
+                        <div class="category">[Category]</div>
+                        <h1>[Project 3 Title]</h1>
+                        <p class="description">[Project 3 description]</p>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="placeholder">[Icon]</div>
+                        <p class="note">Project 3 media would go here</p>
+                    </div>
+                    <div class="project-details-grid">
+                        <div class="project-content">
+                            <h3>[Section 1]</h3>
+                            <p>[Content about your process/approach]</p>
+                            <h3>[Section 2]</h3>
+                            <p>[Content about features/implementation]</p>
+                            <h3>[Section 3]</h3>
+                            <p>[Content about results/learning]</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h4>Project Details</h4>
+                            <div class="info-item">
+                                <div class="label">Duration</div>
+                                <div class="value">[Time]</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Tools</div>
+                                <div class="value">[Technologies]</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Type</div>
+                                <div class="value">[Context]</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn primary">[Link 1]</a>
+                        <a href="#" class="action-btn">[Link 2]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="project-project-4">
+            <div class="container">
+                <div class="project-detail fade-in">
+                    <div class="project-header">
+                        <div class="category">[Category]</div>
+                        <h1>[Project 4 Title]</h1>
+                        <p class="description">[Project 4 description]</p>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="placeholder">[Icon]</div>
+                        <p class="note">Project 4 media would go here</p>
+                    </div>
+                    <div class="project-details-grid">
+                        <div class="project-content">
+                            <h3>[Your Section Title]</h3>
+                            <p>[Your content]</p>
+                            <h3>[Your Section Title]</h3>
+                            <p>[Your content]</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h4>Project Details</h4>
+                            <div class="info-item">
+                                <div class="label">Duration</div>
+                                <div class="value">[Your timeframe]</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Tools</div>
+                                <div class="value">[Your tools]</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn primary">[Your link]</a>
+                        <a href="#" class="action-btn">[Your link]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="project-project-5">
+            <div class="container">
+                <div class="project-detail fade-in">
+                    <div class="project-header">
+                        <div class="category">[Category]</div>
+                        <h1>[Project 5 Title]</h1>
+                        <p class="description">[Project 5 description]</p>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="placeholder">[Icon]</div>
+                        <p class="note">Project 5 visuals here</p>
+                    </div>
+                    <div class="project-details-grid">
+                        <div class="project-content">
+                            <h3>[Section]</h3>
+                            <p>[Content]</p>
+                            <h3>[Section]</h3>
+                            <p>[Content]</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h4>Project Details</h4>
+                            <div class="info-item">
+                                <div class="label">Duration</div>
+                                <div class="value">[Duration]</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Stack</div>
+                                <div class="value">[Tech used]</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn primary">[Action]</a>
+                        <a href="#" class="action-btn">[Action]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="project-project-6">
+            <div class="container">
+                <div class="project-detail fade-in">
+                    <div class="project-header">
+                        <div class="category">[Category]</div>
+                        <h1>[Project 6 Title]</h1>
+                        <p class="description">[Project 6 description]</p>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="placeholder">[Icon]</div>
+                        <p class="note">Project 6 showcase content</p>
+                    </div>
+                    <div class="project-details-grid">
+                        <div class="project-content">
+                            <h3>[Your sections here]</h3>
+                            <p>[Your project story]</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h4>Project Details</h4>
+                            <div class="info-item">
+                                <div class="label">[Detail type]</div>
+                                <div class="value">[Your info]</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn primary">[Link]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
