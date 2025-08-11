@@ -14,13 +14,14 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
+    overscroll-behavior-y: none;
 }
 
 /* Floating rocket */
 body::before {
     content: '🚀';
     position: fixed;
-    font-size: 8rem;
+    font-size: 2rem;
     z-index: -1;
     pointer-events: none;
     opacity: 0.4;
