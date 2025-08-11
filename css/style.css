@@ -21,7 +21,7 @@ body {
 body::before {
     content: '🚀';
     position: fixed;
-    font-size: 2rem;
+    font-size: 8rem;
     z-index: -1;
     pointer-events: none;
     opacity: 0.4;
