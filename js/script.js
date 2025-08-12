@@ -1,4 +1,3 @@
-// Create starfield
 function createStarfield() {
     const starsContainer = document.querySelector('.stars');
     const numStars = 100;
@@ -13,7 +12,6 @@ function createStarfield() {
     }
 }
 
-// Navigation
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.section');
 const backBtn = document.getElementById('backBtn');
@@ -26,7 +24,6 @@ navLinks.forEach(link => {
     });
 });
 
-// Project navigation
 document.querySelectorAll('.click-project').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -35,10 +32,8 @@ document.querySelectorAll('.click-project').forEach(link => {
     });
 });
 
-// Make project cards clickable
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', (e) => {
-        // Don't trigger if clicking on a link
         if (e.target.classList.contains('project-link')) return;
         
         const projectId = card.getAttribute('data-project');
@@ -49,26 +44,33 @@ document.querySelectorAll('.project-card').forEach(card => {
 });
 
 function showSection(targetSection) {
-    // Update active nav
     navLinks.forEach(nl => nl.classList.remove('active'));
     const activeNav = document.querySelector(`.nav-link[data-section="${targetSection}"]`);
     if (activeNav) {
         activeNav.classList.add('active');
     }
     
-    // Show/hide back button
     if (targetSection === 'home') {
         backBtn.classList.remove('show');
+        document.querySelectorAll('.photo-block').forEach(block => {
+            block.classList.remove('hide');
+        });
     } else {
         backBtn.classList.add('show');
+        document.querySelectorAll('.photo-block').forEach(block => {
+            block.classList.add('hide');
+        });
     }
-    
-    // Show target section
+    // Add this to your showSection function
+if (targetSection === 'home') {
+    document.body.classList.add('home-active');
+} else {
+    document.body.classList.remove('home-active');
+}
     sections.forEach(section => {
         section.classList.remove('active');
         if (section.id === targetSection) {
             section.classList.add('active');
-            // Trigger animations
             setTimeout(() => {
                 triggerAnimations(section);
             }, 100);
@@ -76,13 +78,11 @@ function showSection(targetSection) {
     });
 }
 
-// Back button
 backBtn.addEventListener('click', (e) => {
     e.preventDefault();
     showSection('home');
 });
 
-// Project filtering
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -90,11 +90,9 @@ filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
         
-        // Update active filter
         filterBtns.forEach(fb => fb.classList.remove('active'));
         btn.classList.add('active');
         
-        // Filter projects
         projectCards.forEach((card, index) => {
             const category = card.getAttribute('data-category');
             if (filter === 'all' || category.includes(filter)) {
@@ -114,7 +112,6 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Animation triggers
 function triggerAnimations(section) {
     const fadeElements = section.querySelectorAll('.fade-in');
     const slideLeftElements = section.querySelectorAll('.slide-in-left');
@@ -139,16 +136,31 @@ function triggerAnimations(section) {
     });
 }
 
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     createStarfield();
-    // Trigger animations for home section
+    
+    // Set initial state for photo blocks
+    document.body.classList.add('home-active');
+    document.querySelectorAll('.photo-block').forEach((block, index) => {
+        block.style.opacity = '1';
+        block.style.transform = 'translateX(0) rotate(0deg)';
+        block.style.background = 'rgba(96, 165, 250, 0.2)';
+    });
+    
     setTimeout(() => {
         triggerAnimations(document.getElementById('home'));
     }, 500);
+    
+    setTimeout(() => {
+        const desc = document.querySelector('.hero .description');
+        if (desc) {
+            const originalText = desc.textContent;
+            desc.innerHTML = '';
+            typeWriter(desc, originalText, 80);
+        }
+    }, 0);
 });
 
-// Smooth project card hover effects
 projectCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px) scale(1.02)';
@@ -158,3 +170,154 @@ projectCards.forEach(card => {
         card.style.transform = 'translateY(0) scale(1)';
     });
 });
+
+function typeWriter(element, text, speed = 50) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+document.querySelectorAll('.skill-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+        tag.classList.add('clicked');
+        setTimeout(() => {
+            tag.classList.remove('clicked');
+        }, 300);
+    });
+});
+
+let konamiCode = [];
+const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+
+document.addEventListener('keydown', (e) => {
+    konamiCode.push(e.code);
+    if (konamiCode.length > konamiSequence.length) {
+        konamiCode.shift();
+    }
+    
+    if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+        document.body.classList.toggle('cosmic-mode');
+    }
+});
+
+let sparkleTimeout;
+document.addEventListener('mousemove', (e) => {
+    clearTimeout(sparkleTimeout);
+    sparkleTimeout = setTimeout(() => {
+        createSparkle(e.clientX, e.clientY);
+    }, 100);
+});
+
+function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => {
+        sparkle.remove();
+    }, 1000);
+}
+
+document.querySelector('.logo')?.addEventListener('click', () => {
+    for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+            createSparkle(
+                Math.random() * window.innerWidth,
+                Math.random() * window.innerHeight
+            );
+        }, i * 50);
+    }
+});
+
+let devClicks = 0;
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'd' && e.ctrlKey && e.shiftKey) {
+        devClicks++;
+        if (devClicks === 3) {
+            console.log(`
+    🚀 DEVELOPER MODE ACTIVATED 🚀
+    
+    Secret Commands:
+    - Use Konami code for cosmic mode
+    - Click logo for sparkles
+    - Photo blocks only on home page
+    
+    Nice portfolio! 🌟
+            `);
+        }
+    }
+});
+
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.orb, .galaxy-spot');
+    
+    parallaxElements.forEach((element, index) => {
+        const speed = 0.1 + (index * 0.05);
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+
+// Remove the debug code and add proper sliding
+document.querySelectorAll('.photo-block').forEach((block, index) => {
+    block.style.background = 'rgba(96, 165, 250, 0.2)'; // Back to normal color
+});
+
+function showSection(targetSection) {
+    navLinks.forEach(nl => nl.classList.remove('active'));
+    const activeNav = document.querySelector(`.nav-link[data-section="${targetSection}"]`);
+    if (activeNav) {
+        activeNav.classList.add('active');
+    }
+    
+    if (targetSection === 'home') {
+        backBtn.classList.remove('show');
+        document.body.classList.add('home-active');
+        
+        // Animate blocks back in individually
+        document.querySelectorAll('.photo-block').forEach((block, index) => {
+            setTimeout(() => {
+                block.style.opacity = '1';
+                block.style.transform = 'translateX(0) rotate(0deg)';
+            }, index * 100);
+        });
+    } else {
+        backBtn.classList.add('show');
+        document.body.classList.remove('home-active');
+        
+        // Animate blocks out individually
+        document.querySelectorAll('.photo-block').forEach((block, index) => {
+            setTimeout(() => {
+                block.style.opacity = '0';
+                if (index < 3) {
+                    // Left side blocks slide left
+                    block.style.transform = `translateX(-400px) rotate(${Math.random() * 360}deg)`;
+                } else {
+                    // Right side blocks slide right
+                    block.style.transform = `translateX(400px) rotate(${Math.random() * 360}deg)`;
+                }
+            }, index * 150);
+        });
+    }
+    
+    sections.forEach(section => {
+        section.classList.remove('active');
+        if (section.id === targetSection) {
+            section.classList.add('active');
+            setTimeout(() => {
+                triggerAnimations(section);
+            }, 100);
+        }
+    });
+}
