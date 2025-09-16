@@ -1338,3 +1338,35 @@ body:not(.home-active) .photo-block-6 {
     transform: translateX(250px) rotate(-450deg);
     transition-delay: 0.5s;
 }
+
+.project-screenshots {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-screenshots img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-screenshots img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3);
+}
+
+@media (max-width: 768px) {
+    .project-screenshots {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-screenshots img {
+        max-width: 100%;
+    }
+}
+
