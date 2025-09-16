@@ -109,11 +109,10 @@ filterBtns.forEach(btn => {
         btn.classList.add('active');
         
         if (filter === 'motion') {
-            // Show photo gallery for Adobe work
+            // Show only photo gallery for Adobe work
             projectsGrid.style.display = 'none';
             photoGallery.classList.add('active');
             
-            // Show all photo items for Adobe filter
             const photoItems = document.querySelectorAll('.photo-item');
             photoItems.forEach((item, index) => {
                 item.style.display = 'block';
@@ -123,30 +122,25 @@ filterBtns.forEach(btn => {
                 }, index * 100);
             });
         } else if (filter === 'design') {
-            // Show photo gallery for design work
-            projectsGrid.style.display = 'none';
-            photoGallery.classList.add('active');
+            // Show ONLY project cards for design work, hide photo gallery
+            photoGallery.classList.remove('active');
+            projectsGrid.style.display = 'grid';
             
-            // Filter to show only design items
-            const photoItems = document.querySelectorAll('.photo-item');
-            photoItems.forEach((item, index) => {
-                const category = item.getAttribute('data-category');
-                if (category === 'design') {
-                    item.style.display = 'block';
+            // Show only design project cards
+            projectCards.forEach((card, index) => {
+                const category = card.getAttribute('data-category');
+                if (category.includes('design')) {
+                    card.style.display = 'block';
                     setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
                     }, index * 100);
                 } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
+                    card.style.display = 'none';
                 }
             });
         } else if (filter === 'code') {
-            // Show only project cards for code work
+            // Show only project cards for code work, hide photo gallery
             photoGallery.classList.remove('active');
             projectsGrid.style.display = 'grid';
             
@@ -346,35 +340,3 @@ window.addEventListener('scroll', () => {
     });
 });
 
-function openLightbox(img) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const caption = document.querySelector('.lightbox-caption');
-    
-    lightbox.style.display = 'block';
-    lightboxImg.src = img.src;
-    caption.textContent = img.alt;
-    
-    // Prevent body scroll when lightbox is open
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.style.display = 'none';
-    
-    // Restore body scroll
-    document.body.style.overflow = 'auto';
-}
-
-// Close lightbox with Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeLightbox();
-    }
-});
-
-// Prevent lightbox from closing when clicking on the image itself
-document.getElementById('lightbox-img').addEventListener('click', function(e) {
-    e.stopPropagation();
-});

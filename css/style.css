@@ -933,7 +933,7 @@ nav {
 
 /* Photo Gallery Styles */
 .photo-gallery {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;

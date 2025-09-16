@@ -24,14 +24,7 @@
         <div class="galaxy-spot galaxy-spot-5"></div>
         <div class="galaxy-spot galaxy-spot-6"></div>
     </div>
-<!--
-<div class="photo-block photo-block-1">pic</div>
-<div class="photo-block photo-block-2">pic</div>
-<div class="photo-block photo-block-3">pic</div>
-<div class="photo-block photo-block-4">pic</div>
-<div class="photo-block photo-block-5">pic</div>
-<div class="photo-block photo-block-6">pic</div>
---->
+
     <header>
         <div class="container">
             <nav>
@@ -170,47 +163,68 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Soundry Project -->
+                    <div class="project-card fade-in" data-category="design" data-project="soundry">
+                        <div class="project-preview">
+                            <img src="images/portfolio/soundrylogo.png">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category">UX Design • User Research</div>
+                            <h3 class="project-title">Soundry Community</h3>
+                            <p class="project-description">
+                                Community platform design for music producers to share work and get feedback
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">UX Research</span>
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Prototyping</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link click-project" data-project="soundry">View Details</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Photo Gallery (for Adobe/Design work) -->
                 <div class="photo-gallery" id="photo-gallery">
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/FLUXXv2.jpg" alt="FLUX Animation">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/CONSANI.jpg" alt="CONSANI Design">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/beabadoobee.jpg" alt="Beabadoobee Design">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/grotesssK.jpg" alt="Grotess Design">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/FLUX.png">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/FLUX comp.jpg">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/auditon post.jpg">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/newb cover.jpg">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/IMG_5320 (1).jpg">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/image.png">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/GIVEON.jpg">
                     </div>
-                    <div class="photo-item fade-in" data-category="motion">
+                    <div class="photo-item fade-in" data-category="adobe">
                         <img src="images/portfolio/skym.jpg">
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -259,13 +273,12 @@
 
                     <div class="project-showcase">
                         <div class="project-screenshots">
-                            <img src="images/portfolio/b4b discover.jpeg" alt="Band4Band Home Page">
-                            <img src="images/portfolio/b4b login.jpeg" alt="Band4Band Home Page">
-                            <img src="images/portfolio/b4bcalendar.jpeg" alt="Band4Band Home Page">
-                            <img src="images/portfolio/b4bcalendar.jpeg" alt="Band4Band Home Page">
-
+                            <img src="images/portfolio/b4b discover.jpeg" alt="Band4Band Discover Page" class="screenshot-thumb" onclick="openLightbox(this)">
+                            <img src="images/portfolio/b4b login.jpeg" alt="Band4Band Login Page" class="screenshot-thumb" onclick="openLightbox(this)">
+                            <img src="images/portfolio/b4bcalendar.jpeg" alt="Band4Band Calendar View" class="screenshot-thumb" onclick="openLightbox(this)">
                         </div>
                     </div>
+
                     <div class="project-details-grid">
                         <div class="project-content">
                             <h3>Project Overview & Role</h3>
@@ -346,6 +359,112 @@
             </div>
         </section>
 
+        <!-- Soundry Project Detail -->
+        <section class="section" id="project-soundry">
+            <div class="container">
+                <div class="project-detail fade-in">
+                    <div class="project-header">
+                        <div class="category">UX Design • User Research</div>
+                        <h1>Soundry Community</h1>
+                        <p class="description">
+                            Community platform design for music producers to share work, get feedback, 
+                            and build meaningful connections. Led UX research and iterative design process 
+                            for Soundry AI's 900+ user community.
+                        </p>
+                    </div>
+
+                    <div class="project-showcase">
+                        <div class="project-screenshots">
+                            <img src="images/projects/soundry/discover-page.png" alt="Soundry Discover Page" class="screenshot-thumb" onclick="openLightbox(this)">
+                            <img src="images/projects/soundry/community-page.png" alt="Soundry Community Help Page" class="screenshot-thumb" onclick="openLightbox(this)">
+                            <img src="images/projects/soundry/share-page.png" alt="Soundry Share Music Page" class="screenshot-thumb" onclick="openLightbox(this)">
+                        </div>
+                    </div>
+
+                    <div class="project-details-grid">
+                        <div class="project-content">
+                            <h3>Problem & Research</h3>
+                            <p>
+                                We partnered directly with Soundry AI to solve a business challenge: 
+                                their Discord community of 900+ music producers had minimal engagement, with 
+                                users sharing work but receiving little feedback. I worked with comprehensive 
+                                user research and conducted in-depth interviews with music producers to find out 
+                                the root causes of disengagement and identify opportunities for meaningful connection.
+                            </p>
+
+                            <h3>Design Process</h3>
+                            <p>
+                                Used a data-driven design approach starting with extensive user research. We used 
+                                affinity mapping, persona development, and task analysis. 
+                                We also translated research insights into wireframes and high-fidelity prototypes in Figma,
+                                and orchestrated multiple rounds of heuristic evaluations, expert reviews, and user feedback sessions, 
+                                iterating rapidly based on findings to optimize the user's experience.
+                            </p>
+                            
+                            <h3>Key Features Designed</h3>
+                            <p>
+                                We planned a three-pillar platform strategy: a Discovery engine for music exploration with 
+                                interactive audio visualizers, a Community Help system for peer-to-peer production assistance,
+                                and an intuitive Share interface for both music publishing and help requests. 
+                                we also fovused on a unified content management system that solved the major pain point of scattered user content.
+                            </p>
+
+                            <h3>Results & Impact</h3>
+                            <p>
+                                We delivered great results: 100% task completion rate across all usability scenarios with 
+                                8 diverse participants, averaging 4.6/5 satisfaction scores. Most significantly, users 
+                                completed tasks faster than our benchmarks, showing the intuitive design success we achieved. 
+                                My platform design directly addressed Soundry AI's engagement challenges through evidence-based UX solutions.
+                            </p>
+                        </div>
+
+                        <div class="project-sidebar">
+                            <h4>Project Details</h4>
+                            
+                            <div class="info-item">
+                                <div class="label">Duration</div>
+                                <div class="value">10 Weeks (Academic Project)</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="label">Tools</div>
+                                <div class="value">Figma, User Interviews, Usability Testing</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="label">Team Size</div>
+                                <div class="value">5 designers</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="label">Client</div>
+                                <div class="value">Soundry AI</div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="label">My Role</div>
+                                <div class="value">UX Researcher & Designer</div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="label">Key Skills</div>
+                                <div class="value">User Research, Prototyping, Usability Testing</div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="label">Team</div>
+                                <div class="value">Ben Webby, Alex Chadwick, Colin Quigley, Henry Abrahamsen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://www.figma.com/proto/0MrJLTNzaXS8djl5g9Wg9q/Wireframe?node-id=1-2&t=r9thrDa8pirkQEoM-1&starting-point-node-id=1%3A2" class="action-btn primary">View Figma Prototype</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sample Adobe Project Detail Page -->
         <section class="section" id="project-motion-graphics">
             <div class="container">
@@ -408,6 +527,13 @@
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" class="lightbox-content">
+            <div class="lightbox-caption"></div>
+        </div>
     </main>
 
     <script src="js/script.js"></script>
