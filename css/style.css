@@ -931,6 +931,85 @@ nav {
     gap: 2rem;
 }
 
+/* Photo Gallery Styles */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-start;
+}
+
+.photo-gallery.active {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 375px;
+    height: auto;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3);
+}
+
+.photo-item img {
+    width: 375px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.02);
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(167, 139, 250, 0.1));
+    position: relative;
+    aspect-ratio: 4/3;
+}
+
+.photo-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(96,165,250,0.2)"/><circle cx="5" cy="5" r="0.5" fill="rgba(167,139,250,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+    pointer-events: none;
+}
+
+.placeholder-text {
+    font-family: 'JetBrains Mono', monospace;
+    color: #60a5fa;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
+}
+
 .project-preview {
     height: 200px;
     background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(167, 139, 250, 0.1));
@@ -1130,6 +1209,23 @@ nav {
 
     .sparkle {
         display: none;
+    }
+
+    .photo-gallery {
+        gap: 0.5rem;
+    }
+    
+    .photo-item {
+        width: 120px;
+    }
+    
+    .photo-item img {
+        width: 120px;
+    }
+    
+    .placeholder-text {
+        font-size: 0.8rem;
+        padding: 0.5rem;
     }
 }
 

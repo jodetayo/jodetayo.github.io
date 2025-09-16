@@ -52,21 +52,34 @@ function showSection(targetSection) {
     
     if (targetSection === 'home') {
         backBtn.classList.remove('show');
-        document.querySelectorAll('.photo-block').forEach(block => {
-            block.classList.remove('hide');
+        document.body.classList.add('home-active');
+        
+        // Animate blocks back in individually
+        document.querySelectorAll('.photo-block').forEach((block, index) => {
+            setTimeout(() => {
+                block.style.opacity = '1';
+                block.style.transform = 'translateX(0) rotate(0deg)';
+            }, index * 100);
         });
     } else {
         backBtn.classList.add('show');
-        document.querySelectorAll('.photo-block').forEach(block => {
-            block.classList.add('hide');
+        document.body.classList.remove('home-active');
+        
+        // Animate blocks out individually
+        document.querySelectorAll('.photo-block').forEach((block, index) => {
+            setTimeout(() => {
+                block.style.opacity = '0';
+                if (index < 3) {
+                    // Left side blocks slide left
+                    block.style.transform = `translateX(-400px) rotate(${Math.random() * 360}deg)`;
+                } else {
+                    // Right side blocks slide right
+                    block.style.transform = `translateX(400px) rotate(${Math.random() * 360}deg)`;
+                }
+            }, index * 150);
         });
     }
-    // Add this to your showSection function
-if (targetSection === 'home') {
-    document.body.classList.add('home-active');
-} else {
-    document.body.classList.remove('home-active');
-}
+    
     sections.forEach(section => {
         section.classList.remove('active');
         if (section.id === targetSection) {
@@ -89,26 +102,90 @@ const projectCards = document.querySelectorAll('.project-card');
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
+        const projectsGrid = document.querySelector('.projects-grid');
+        const photoGallery = document.getElementById('photo-gallery');
         
         filterBtns.forEach(fb => fb.classList.remove('active'));
         btn.classList.add('active');
         
-        projectCards.forEach((card, index) => {
-            const category = card.getAttribute('data-category');
-            if (filter === 'all' || category.includes(filter)) {
+        if (filter === 'motion') {
+            // Show photo gallery for Adobe work
+            projectsGrid.style.display = 'none';
+            photoGallery.classList.add('active');
+            
+            // Show all photo items for Adobe filter
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach((item, index) => {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        } else if (filter === 'design') {
+            // Show photo gallery for design work
+            projectsGrid.style.display = 'none';
+            photoGallery.classList.add('active');
+            
+            // Filter to show only design items
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach((item, index) => {
+                const category = item.getAttribute('data-category');
+                if (category === 'design') {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        } else if (filter === 'code') {
+            // Show only project cards for code work
+            photoGallery.classList.remove('active');
+            projectsGrid.style.display = 'grid';
+            
+            projectCards.forEach((card, index) => {
+                const category = card.getAttribute('data-category');
+                if (category.includes('code')) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        } else {
+            // Show all - both project cards and photo gallery
+            projectsGrid.style.display = 'grid';
+            photoGallery.classList.add('active');
+            
+            // Show all project cards
+            projectCards.forEach((card, index) => {
                 card.style.display = 'block';
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
                 }, index * 100);
-            } else {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+            });
+            
+            // Show all photo items
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach((item, index) => {
+                item.style.display = 'block';
                 setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300);
-            }
-        });
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+        }
     });
 });
 
@@ -268,56 +345,3 @@ window.addEventListener('scroll', () => {
         element.style.transform = `translateY(${scrolled * speed}px)`;
     });
 });
-
-// Remove the debug code and add proper sliding
-document.querySelectorAll('.photo-block').forEach((block, index) => {
-    block.style.background = 'rgba(96, 165, 250, 0.2)'; // Back to normal color
-});
-
-function showSection(targetSection) {
-    navLinks.forEach(nl => nl.classList.remove('active'));
-    const activeNav = document.querySelector(`.nav-link[data-section="${targetSection}"]`);
-    if (activeNav) {
-        activeNav.classList.add('active');
-    }
-    
-    if (targetSection === 'home') {
-        backBtn.classList.remove('show');
-        document.body.classList.add('home-active');
-        
-        // Animate blocks back in individually
-        document.querySelectorAll('.photo-block').forEach((block, index) => {
-            setTimeout(() => {
-                block.style.opacity = '1';
-                block.style.transform = 'translateX(0) rotate(0deg)';
-            }, index * 100);
-        });
-    } else {
-        backBtn.classList.add('show');
-        document.body.classList.remove('home-active');
-        
-        // Animate blocks out individually
-        document.querySelectorAll('.photo-block').forEach((block, index) => {
-            setTimeout(() => {
-                block.style.opacity = '0';
-                if (index < 3) {
-                    // Left side blocks slide left
-                    block.style.transform = `translateX(-400px) rotate(${Math.random() * 360}deg)`;
-                } else {
-                    // Right side blocks slide right
-                    block.style.transform = `translateX(400px) rotate(${Math.random() * 360}deg)`;
-                }
-            }, index * 150);
-        });
-    }
-    
-    sections.forEach(section => {
-        section.classList.remove('active');
-        if (section.id === targetSection) {
-            section.classList.add('active');
-            setTimeout(() => {
-                triggerAnimations(section);
-            }, 100);
-        }
-    });
-}
