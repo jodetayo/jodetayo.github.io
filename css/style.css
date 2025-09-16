@@ -933,7 +933,7 @@ nav {
 
 /* Photo Gallery Styles */
 .photo-gallery {
-    display: none;
+    display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
@@ -1367,6 +1367,40 @@ body:not(.home-active) .photo-block-6 {
     
     .project-screenshots img {
         max-width: 100%;
+    }
+}
+
+.about-photos {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-start;
+}
+
+.about-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(96, 165, 250, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.about-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(96, 165, 250, 0.6);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+}
+
+@media (max-width: 768px) {
+    .about-photos {
+        justify-content: center;
+    }
+    
+    .about-photo {
+        width: 100px;
+        height: 100px;
     }
 }
 
