@@ -112,6 +112,7 @@ filterBtns.forEach(btn => {
             // Show only photo gallery for Adobe work
             projectsGrid.style.display = 'none';
             photoGallery.classList.add('active');
+            photoGallery.style.display = 'flex';
             
             const photoItems = document.querySelectorAll('.photo-item');
             photoItems.forEach((item, index) => {
@@ -124,6 +125,7 @@ filterBtns.forEach(btn => {
         } else if (filter === 'design') {
             // Show ONLY project cards for design work, hide photo gallery
             photoGallery.classList.remove('active');
+            photoGallery.style.display = 'none';
             projectsGrid.style.display = 'grid';
             
             // Show only design project cards
@@ -142,6 +144,7 @@ filterBtns.forEach(btn => {
         } else if (filter === 'code') {
             // Show only project cards for code work, hide photo gallery
             photoGallery.classList.remove('active');
+            photoGallery.style.display = 'none';
             projectsGrid.style.display = 'grid';
             
             projectCards.forEach((card, index) => {
@@ -160,6 +163,7 @@ filterBtns.forEach(btn => {
             // Show all - both project cards and photo gallery
             projectsGrid.style.display = 'grid';
             photoGallery.classList.add('active');
+            photoGallery.style.display = 'flex';
             
             // Show all project cards
             projectCards.forEach((card, index) => {
@@ -339,4 +343,3 @@ window.addEventListener('scroll', () => {
         element.style.transform = `translateY(${scrolled * speed}px)`;
     });
 });
-
