@@ -104,6 +104,7 @@ filterBtns.forEach(btn => {
         const filter = btn.getAttribute('data-filter');
         const projectsGrid = document.querySelector('.projects-grid');
         const photoGallery = document.getElementById('photo-gallery');
+        const videoPortfolioBtn = document.getElementById('videoPortfolioBtn');
         
         filterBtns.forEach(fb => fb.classList.remove('active'));
         btn.classList.add('active');
@@ -113,6 +114,7 @@ filterBtns.forEach(btn => {
             projectsGrid.style.display = 'none';
             photoGallery.classList.add('active');
             photoGallery.style.display = 'flex';
+            videoPortfolioBtn.style.display = 'block'; // Show video button
             
             const photoItems = document.querySelectorAll('.photo-item');
             photoItems.forEach((item, index) => {
@@ -127,6 +129,7 @@ filterBtns.forEach(btn => {
             photoGallery.classList.remove('active');
             photoGallery.style.display = 'none';
             projectsGrid.style.display = 'grid';
+            videoPortfolioBtn.style.display = 'none'; // Hide video button
             
             // Show only design project cards
             projectCards.forEach((card, index) => {
@@ -146,6 +149,7 @@ filterBtns.forEach(btn => {
             photoGallery.classList.remove('active');
             photoGallery.style.display = 'none';
             projectsGrid.style.display = 'grid';
+            videoPortfolioBtn.style.display = 'none'; // Hide video button
             
             projectCards.forEach((card, index) => {
                 const category = card.getAttribute('data-category');
@@ -164,6 +168,7 @@ filterBtns.forEach(btn => {
             projectsGrid.style.display = 'grid';
             photoGallery.classList.add('active');
             photoGallery.style.display = 'flex';
+            videoPortfolioBtn.style.display = 'none'; // Hide video button for "all"
             
             // Show all project cards
             projectCards.forEach((card, index) => {
